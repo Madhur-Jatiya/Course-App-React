@@ -1,6 +1,7 @@
 import './App.css';
 import Header from './MyComponents/Header';
 import Home from './MyComponents/Home';
+import Course from './MyComponents/Course';
 // import { ToastContainer, toast } from 'react-toastify';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       {/* <ToastContainer /> */}
       <Header />
       <Home/>
+      <Course />
     </div>
   );
 }
