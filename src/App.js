@@ -15,8 +15,9 @@ function App() {
     <div className='text-center'>
       {/* <ToastContainer /> */}
       <Header />
-      <Home/>
-      <Course />
+      <Home />
+      <Course course={{ title: "React", description: "Fornt End framework" }} />
+      <Course course={{ title: "Java", description: "Back End framework" }} />
     </div>
   );
 }
