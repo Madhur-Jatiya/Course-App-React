@@ -20,6 +20,10 @@ const AddCourse = () => {
                     <label htmlFor="desc">Course Description</label>
                     <FormControl as='textarea' placeholder="Enter desc here" name="desc" id="desc" style={{ height: 150 }} />
                 </FormGroup>
+
+                <Container>
+                    <Button>Add Course</Button>
+                </Container>
             </Form>
         </Fragment>
     );
