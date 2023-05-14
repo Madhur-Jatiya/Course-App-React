@@ -6,7 +6,7 @@ const Home = () => {
     return (
         <div>
             <Jumbotron className="text-center">
-                <h1 className="display-3">Madhurmoms</h1>
+                <h1>Madhurmoms</h1>
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat, accusantium?</p>
                 <Container>
                     <Button variant="outline-success">Start Using</Button>
