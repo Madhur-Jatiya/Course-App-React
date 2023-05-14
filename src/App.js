@@ -13,7 +13,7 @@ function App() {
   //   toast.warning("This is my error message");
   // }
   return (
-    <div >
+    <div className='text-center'>
       {/* <ToastContainer /> */}
       <Header />
       <Home />
