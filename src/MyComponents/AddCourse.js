@@ -1,28 +1,29 @@
 import React, { Fragment } from "react";
-import { Form, FormControl, FormGroup, FormLabel } from "react-bootstrap";
+import { Form, FormControl, FormGroup, FormLabel, Button, Container } from "react-bootstrap";
 
 const AddCourse = () => {
     return (
-        <Fragment >
+        <Fragment>
             <h1 className='my-3'>Add Course</h1>
-            <Form>
-                <FormGroup>
+            <Form className='my-5'>
+                <FormGroup className='my-3'>
                     <FormLabel htmlFor="userId">Course ID</FormLabel>
                     <FormControl type="text" placeholder="Enter here" name="userId" id="userId" />
                 </FormGroup>
 
-                <FormGroup>
+                <FormGroup className='my-3'>
                     <label htmlFor="title">Course Title</label>
                     <FormControl type="text" placeholder="Enter title here" name="title" id="title" />
                 </FormGroup>
 
-                <FormGroup className='my-5'>
+                <FormGroup className='my-3'>
                     <label htmlFor="desc">Course Description</label>
                     <FormControl as='textarea' placeholder="Enter desc here" name="desc" id="desc" style={{ height: 150 }} />
                 </FormGroup>
 
                 <Container>
-                    <Button>Add Course</Button>
+                    <Button variant="success">Add Course</Button>
+                    <Button variant="warning ml-3">Clear</Button>
                 </Container>
             </Form>
         </Fragment>
