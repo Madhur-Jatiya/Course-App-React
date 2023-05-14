@@ -1,55 +1,39 @@
 import { ListGroup } from "react-bootstrap";
-import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Menus = () => {
-    const [activeItem, setActiveItem] = useState(null);
-
-    const handleItemClick = (index) => {
-        setActiveItem(index);
-    };
-
     return (
         <ListGroup>
-            <ListGroup.Item
+            <Link className="list-group-item list-group-item-action"
                 action
-                href="/"
-                active={activeItem === 0}
-                onClick={() => handleItemClick(0)}
+                to="/"
             >
                 Home
-            </ListGroup.Item>
-            <ListGroup.Item
+            </Link>
+            <Link className="list-group-item list-group-item-action"
                 action
-                href="/add-course"
-                active={activeItem === 1}
-                onClick={() => handleItemClick(1)}
+                to="/add-course"
             >
                 Add Course
-            </ListGroup.Item>
-            <ListGroup.Item
+            </Link>
+            <Link className="list-group-item list-group-item-action"
                 action
-                href="/view-courses"
-                active={activeItem === 2}
-                onClick={() => handleItemClick(2)}
+                to="/view-courses"
             >
                 View Courses
-            </ListGroup.Item>
-            <ListGroup.Item
+            </Link>
+            <Link className="list-group-item list-group-item-action"
                 action
-                href="#"
-                active={activeItem === 3}
-                onClick={() => handleItemClick(3)}
+                to="#"
             >
                 About
-            </ListGroup.Item>
-            <ListGroup.Item
+            </Link>
+            <Link className="list-group-item list-group-item-action"
                 action
-                href="#"
-                active={activeItem === 4}
-                onClick={() => handleItemClick(4)}
+                to="#"
             >
                 Contact
-            </ListGroup.Item>
+            </Link>
         </ListGroup>
     );
 };
