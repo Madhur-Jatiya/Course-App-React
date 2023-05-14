@@ -3,7 +3,7 @@ import { Card, Container, Button } from 'react-bootstrap';
 
 const Course = ({ course }) => {
     return (
-        <Card>
+        <Card className='text-center'>
             <Card.Body>
                 <Card.Title className="font-weight-bold">{course.title}</Card.Title>
                 <Card.Text>{course.description}</Card.Text>

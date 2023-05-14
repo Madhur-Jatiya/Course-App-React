@@ -1,8 +1,8 @@
-import { isCompositeComponent } from 'react-dom/test-utils';
 import './App.css';
 import Header from './MyComponents/Header';
 import Home from './MyComponents/Home';
 import Allcourse from './MyComponents/Allcourses';
+import AddCourse from './MyComponents/AddCourse';
 // import { ToastContainer, toast } from 'react-toastify';
 
 function App() {
@@ -13,11 +13,12 @@ function App() {
   //   toast.warning("This is my error message");
   // }
   return (
-    <div className='text-center'>
+    <div >
       {/* <ToastContainer /> */}
       <Header />
       <Home />
       <Allcourse />
+      <AddCourse />
     </div>
   );
 }
