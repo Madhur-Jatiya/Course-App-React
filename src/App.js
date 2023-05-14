@@ -1,7 +1,8 @@
+import { isCompositeComponent } from 'react-dom/test-utils';
 import './App.css';
 import Header from './MyComponents/Header';
 import Home from './MyComponents/Home';
-import Course from './MyComponents/Course';
+import Allcourse from './MyComponents/Allcourses';
 // import { ToastContainer, toast } from 'react-toastify';
 
 function App() {
@@ -16,8 +17,7 @@ function App() {
       {/* <ToastContainer /> */}
       <Header />
       <Home />
-      <Course course={{ title: "React", description: "Fornt End framework" }} />
-      <Course course={{ title: "Java", description: "Back End framework" }} />
+      <Allcourse />
     </div>
   );
 }
