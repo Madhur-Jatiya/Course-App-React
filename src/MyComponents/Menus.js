@@ -12,7 +12,7 @@ const Menus = () => {
         <ListGroup>
             <ListGroup.Item
                 action
-                href="#"
+                href="/"
                 active={activeItem === 0}
                 onClick={() => handleItemClick(0)}
             >
@@ -20,7 +20,7 @@ const Menus = () => {
             </ListGroup.Item>
             <ListGroup.Item
                 action
-                href="#"
+                href="/add-course"
                 active={activeItem === 1}
                 onClick={() => handleItemClick(1)}
             >
@@ -28,7 +28,7 @@ const Menus = () => {
             </ListGroup.Item>
             <ListGroup.Item
                 action
-                href="#"
+                href="/view-courses"
                 active={activeItem === 2}
                 onClick={() => handleItemClick(2)}
             >
