@@ -1,10 +1,30 @@
 import React, { useState, useEffect } from "react";
 import Course from "./Course";
+import base_url from "./../api/bootapi";
+import axios from "axios";
 
 const Allcourses = () => {
   useEffect(() => {
     document.title = "All Courses || Madhurmoms";
   });
+
+  //function to call server:
+  const getAllCoursesFromServer = () => {
+    axios.get(`${base_url}/courses`).then(
+      (response) => {
+        console.log(response.data); //success
+      },
+      (error) => {
+        console.log(error); //error
+      }
+    );
+  };
+
+  //calling loading course function
+  useEffect(() => {
+    getAllCoursesFromServer();
+  }, []);
+
 
   const [courses, setCourses] = useState([
     { id: 1, title: "React", description: "Front End framework" },
