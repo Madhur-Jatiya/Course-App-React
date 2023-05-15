@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Jumbotron } from 'bootstrap-4-react';
 import { Container, Button } from "react-bootstrap";
 
 const Home = () => {
+    useEffect(() => {
+        document.title = "Home || Madhurmoms";
+    },[]);
     return (
         <div>
             <Jumbotron className="text-center">

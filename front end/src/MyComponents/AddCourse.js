@@ -1,7 +1,12 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
 import { Form, FormControl, FormGroup, FormLabel, Button, Container } from "react-bootstrap";
 
 const AddCourse = () => {
+
+    useEffect(() => {
+        document.title = "Add Courses";
+    })
+
     return (
         <Fragment>
             <h1 className='my-3'>Add Course</h1>
