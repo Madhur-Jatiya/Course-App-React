@@ -4,7 +4,7 @@ import { Form, FormControl, FormGroup, FormLabel, Button, Container } from "reac
 const AddCourse = () => {
 
     useEffect(() => {
-        document.title = "Add Courses";
+        document.title = "Add Courses || Madhurmoms";
     })
 
     return (

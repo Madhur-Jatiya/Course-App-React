@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 const Allcourses = () => {
 
     useEffect(() => {
-        document.title = "All Courses";
+        document.title = "All Courses || Madhurmoms";
     })
 
 
