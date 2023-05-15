@@ -1,40 +1,25 @@
 import React, { useState, useEffect } from "react";
 import Course from "./Course";
-import base_url from "./../api/bootapi";
-import axios from "axios";
+import myAxios from ".//../api/bootapi";
 
 const Allcourses = () => {
   useEffect(() => {
     document.title = "All Courses || Madhurmoms";
-  });
+    getAllCoursesFromServer();
+  }, []);
 
-  //function to call server:
   const getAllCoursesFromServer = () => {
-    axios.get(`${base_url}/courses`).then(
+    myAxios.get('/courses').then(
       (response) => {
-        console.log(response.data); //success
+        console.log(response.data);
       },
       (error) => {
-        console.log(error); //error
+        console.log(error);
       }
     );
   };
 
-  //calling loading course function
-  useEffect(() => {
-    getAllCoursesFromServer();
-  }, []);
-
-
-  const [courses, setCourses] = useState([
-    { id: 1, title: "React", description: "Front End framework" },
-    { id: 2, title: "Java", description: "Back End framework" },
-    { id: 3, title: "Angular", description: "Front End framework" },
-    { id: 4, title: "Vue", description: "Front End framework" },
-    { id: 5, title: "Node", description: "Back End framework" },
-    { id: 6, title: "Express", description: "Back End framework" },
-    { id: 7, title: "MongoDB", description: "Database" },
-  ]);
+  const [courses, setCourses] = useState([]);
 
   return (
     <div>

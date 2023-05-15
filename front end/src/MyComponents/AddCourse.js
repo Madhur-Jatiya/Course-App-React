@@ -5,7 +5,7 @@ const AddCourse = () => {
 
     useEffect(() => {
         document.title = "Add Courses || Madhurmoms";
-    })
+    },[])
 
     return (
         <Fragment>
