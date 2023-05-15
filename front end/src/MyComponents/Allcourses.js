@@ -8,7 +8,6 @@ const Allcourses = () => {
         document.title = "All Courses || Madhurmoms";
     })
 
-
     const [courses, setCourses] = useState([
         { title: "React", description: "Fornt End framework" },
         { title: "Java", description: "Back End framework" },
