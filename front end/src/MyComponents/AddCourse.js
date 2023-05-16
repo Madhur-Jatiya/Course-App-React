@@ -1,33 +1,72 @@
-import React, { Fragment, useEffect } from "react";
+import axios from "axios";
+import { base_url } from "../api/bootapi";
+import React, { Fragment, useEffect, useState } from "react";
 import { Form, FormControl, FormGroup, FormLabel, Button, Container } from "react-bootstrap";
 
 const AddCourse = () => {
 
     useEffect(() => {
         document.title = "Add Courses || Madhurmoms";
-    },[])
+    }, [])
+
+    const [course, setCourses] = useState({});
+
+    //form handler function
+    const handleForm = (e) => {
+        console.log(course);
+        postDataToServer(course);
+        e.preventDefault();
+    }
+
+    //creating function to post data on server
+    const postDataToServer = (data) => {
+        axios.post(`${base_url}/courses`, data).then(
+            (response) => {
+                console.log(response);
+                console.log("success");
+            },
+            (error) => {
+                console.log(error);
+                console.log("error");
+            }
+        )
+    }
 
     return (
         <Fragment>
             <h1 className='my-3'>Add Course</h1>
-            <Form className='my-5'>
+            <Form className='my-5' onSubmit={handleForm}>
                 <FormGroup className='my-3'>
                     <FormLabel htmlFor="userId">Course ID</FormLabel>
-                    <FormControl type="text" placeholder="Enter here" name="userId" id="userId" />
+                    <FormControl type="text" placeholder="Enter here" name="userId" id="userId" onChange={(e) => {
+                        setCourses({ ...course, id: e.target.value });
+                    }} />
                 </FormGroup>
 
                 <FormGroup className='my-3'>
                     <label htmlFor="title">Course Title</label>
-                    <FormControl type="text" placeholder="Enter title here" name="title" id="title" />
+                    <FormControl type="text" placeholder="Enter title here" name="title" id="title" onChange={(e) => {
+                        setCourses({ ...course, title: e.target.value });
+                    }} />
                 </FormGroup>
 
                 <FormGroup className='my-3'>
-                    <label htmlFor="desc">Course Description</label>
-                    <FormControl as='textarea' placeholder="Enter desc here" name="desc" id="desc" style={{ height: 150 }} />
+                    <label htmlFor="duration">Course Duration</label>
+                    <FormControl
+                        as='textarea'
+                        placeholder="Enter duration here"
+                        name="duration"
+                        id="duration"
+                        style={{ height: 150 }}
+                        onChange={(e) => {
+                            setCourses({ ...course, duration: e.target.value });
+                        }}
+                    />
                 </FormGroup>
 
+
                 <Container>
-                    <Button variant="success">Add Course</Button>
+                    <Button type="submit" variant="success">Add Course</Button>
                     <Button variant="warning ml-3">Clear</Button>
                 </Container>
             </Form>

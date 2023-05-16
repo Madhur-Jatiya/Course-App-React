@@ -9,6 +9,7 @@ const AllCourses = () => {
 
   useEffect(() => {
     document.title = "All Courses || Madhurmoms";
+    getAllCoursesFromServer();
   }, []);
 
   const getAllCoursesFromServer = () => {
@@ -24,11 +25,6 @@ const AllCourses = () => {
         toast.error("Something went wrong");
       });
   };
-
-  //calling loading course funtion
-  useEffect(() => {
-    getAllCoursesFromServer();
-  },[]);
 
   return (
     <div>

@@ -1,17 +1,16 @@
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { Container, Row, Col } from 'react-bootstrap';
 import Header from './MyComponents/Header';
 import Home from './MyComponents/Home';
-import Allcourse from './MyComponents/Allcourses';
+import AllCourses from './MyComponents/Allcourses';
 import AddCourse from './MyComponents/AddCourse';
-import { Container, Row, Col } from 'react-bootstrap';
 import Menus from './MyComponents/Menus';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
-    <div className='text-center'>
+    <div className="text-center">
       <Router>
-
         <Container>
           <Header />
           <Row>
@@ -20,14 +19,13 @@ function App() {
             </Col>
             <Col md={8}>
               <Routes>
-                <Route path="/" Component={Home} exact />
-                <Route path="/add-course" Component={AddCourse} exact />
-                <Route path="/view-courses" Component={Allcourse} exact />
+                <Route path="/" element={<Home />} exact />
+                <Route path="/add-course" element={<AddCourse />} exact />
+                <Route path="/view-courses" element={<AllCourses />} exact />
               </Routes>
             </Col>
           </Row>
         </Container>
-
       </Router>
     </div>
   );
