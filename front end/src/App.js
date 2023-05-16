@@ -6,6 +6,7 @@ import Home from './MyComponents/Home';
 import AllCourses from './MyComponents/Allcourses';
 import AddCourse from './MyComponents/AddCourse';
 import Menus from './MyComponents/Menus';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
             </Col>
           </Row>
         </Container>
+        <ToastContainer /> {/* Add this line */}
       </Router>
     </div>
   );

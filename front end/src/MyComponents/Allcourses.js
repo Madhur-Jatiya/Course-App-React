@@ -1,16 +1,22 @@
 import React, { useState, useEffect } from "react";
 import Course from "./Course";
 import myAxios from "../api/bootapi";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+// import axios from "axios";
+// import { base_url } from "../api/bootapi";
 
 const AllCourses = () => {
-  const [courses, setCourses] = useState([]);
 
   useEffect(() => {
     document.title = "All Courses || Madhurmoms";
     getAllCoursesFromServer();
+    // getAllCourse();
   }, []);
+
+
+
+  const [courses, setCourses] = useState({});
 
   const getAllCoursesFromServer = () => {
     myAxios
@@ -26,6 +32,21 @@ const AllCourses = () => {
       });
   };
 
+  // const getAllCourse = () => {
+  //   axios.get(`${base_url}/courses`).then(
+  //     (response) => {
+  //       console.log(response.data);
+  //       toast.success("Course loaded successfully");
+  //       setCourses(response.data);
+  //     },
+  //     (error) => {
+  //       console.log(error);
+  //       console.log("error");
+  //       toast.error("Something went wrong");
+  //     }
+  //   )
+  // }
+
   return (
     <div>
       <h1>All Courses</h1>
@@ -35,7 +56,6 @@ const AllCourses = () => {
       ) : (
         <p>No Courses Available</p>
       )}
-      <ToastContainer />
     </div>
   );
 };

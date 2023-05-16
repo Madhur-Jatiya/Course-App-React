@@ -2,6 +2,7 @@ import axios from "axios";
 import { base_url } from "../api/bootapi";
 import React, { Fragment, useEffect, useState } from "react";
 import { Form, FormControl, FormGroup, FormLabel, Button, Container } from "react-bootstrap";
+import { toast } from "react-toastify";
 
 const AddCourse = () => {
 
@@ -24,10 +25,12 @@ const AddCourse = () => {
             (response) => {
                 console.log(response);
                 console.log("success");
+                toast.success("Course added successfully");
             },
             (error) => {
                 console.log(error);
                 console.log("error");
+                toast.error("Something went wrong");
             }
         )
     }
@@ -64,10 +67,9 @@ const AddCourse = () => {
                     />
                 </FormGroup>
 
-
                 <Container>
                     <Button type="submit" variant="success">Add Course</Button>
-                    <Button variant="warning ml-3">Clear</Button>
+                    <Button variant="warning ml-3" type="reset">Clear</Button>
                 </Container>
             </Form>
         </Fragment>
