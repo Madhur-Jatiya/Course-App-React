@@ -27,7 +27,7 @@ function App() {
             </Col>
           </Row>
         </Container>
-        <ToastContainer /> {/* Add this line */}
+        <ToastContainer />
       </Router>
     </div>
   );

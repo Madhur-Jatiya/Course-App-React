@@ -26,18 +26,23 @@ const AllCourses = () => {
     );
   };
 
-  //calling loading course function
+  // calling loading course function
   useEffect(() => {
     getAllCoursesFromServer();
   }, []);
 
   const [courses, setCourses] = useState({});
 
+//remove course by id
+const updateCourse = (id)=>{
+  setCourses(courses.filter((item)=>item.id!==id));
+}
+
   return (
     <div>
       <h1>All Courses</h1>
       <p>List of Courses:</p>
-      {courses.length > 0 ? courses.map((item) => <Course key={item.id} course={item} />)
+      {courses.length > 0 ? courses.map((item) => <Course key={item.id} course={item} update={updateCourse} />)
         : "No Courses Available"}
     </div>
   );
